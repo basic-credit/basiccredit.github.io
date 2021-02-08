@@ -12,6 +12,6 @@ const Footer = () => {
       <a href="https://www.gatsbyjs.com">Gatsby</a>
     </footer>
   );
-}
+};
 
 export default Footer;
