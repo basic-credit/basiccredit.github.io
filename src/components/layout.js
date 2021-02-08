@@ -9,6 +9,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
+import './layout.css';
 
 import Header from './header';
 import Footer from './footer';
