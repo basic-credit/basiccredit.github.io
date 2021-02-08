@@ -12,7 +12,6 @@ import { Container } from 'react-bootstrap';
 
 import Header from './header';
 import Footer from './footer';
-import './layout.css';
 
 const Layout = ({ children }) => {
   return (

@@ -4,22 +4,23 @@ import { Row, Col } from 'react-bootstrap';
 import Layout from '../components/layout';
 import Image from '../components/image';
 import SEO from '../components/seo';
+import './index.css';
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Row className="justify-content-md-center">
-      <Col>
-        <h1>Decentralized Collateral Free Loans</h1>
-        <p>
-          Basic Credit is a decentralized protocol to borrow & lend without
-          upfront collateral.
-        </p>
-        <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <div className="index">
+      <Row className="justify-content-center">
+        <Col md="6" className="text-center">
+          <h1>Decentralized Collateral Free Loans</h1>
+          <p>
+            Basic Credit is a decentralized protocol to borrow & lend without
+            upfront collateral.
+          </p>
           <Image />
-        </div>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </div>
   </Layout>
 );
 
