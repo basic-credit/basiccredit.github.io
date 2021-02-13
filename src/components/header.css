@@ -2,14 +2,7 @@
   margin-left: 12px;
 }
 
-.mobile-nav {
-  display: none !important;
-}
-
 @media screen and (max-width: 640px) {
-  .mobile-nav {
-    display: flex !important;
-  }
   .use-basic-credit-btn {
     display: none;
   }

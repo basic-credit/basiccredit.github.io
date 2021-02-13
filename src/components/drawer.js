@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { externalLinks } from '../common/externalLinks';
-import { makeStyles } from '@material-ui/core/styles';
 import MaterialUiDrawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
+import { makeStyles } from '@material-ui/core/styles';
+import './drawer.css';
 
 const getExternalListItem = ({ link, key, text }) => (
   <a href={externalLinks[link]}>
@@ -65,8 +66,8 @@ const Drawer = () => {
 
   return (
     <>
-      <Button onClick={toggleDrawer(true)}>
-        <MenuIcon className="mobile-nav" />
+      <Button className="mobile-nav" onClick={toggleDrawer(true)}>
+        <MenuIcon />
       </Button>
       <MaterialUiDrawer anchor="right" open={isDrawerToggled} onClose={toggleDrawer(false)}>
         <div

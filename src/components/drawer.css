@@ -1,0 +1,9 @@
+.mobile-nav {
+  display: none !important;
+}
+
+@media screen and (max-width: 640px) {
+  .mobile-nav {
+    display: flex !important;
+  }
+}
