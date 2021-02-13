@@ -10,7 +10,12 @@ import './header.css';
 const Header = () => {
   return (
     <header>
-      <Navbar className="justify-content-between" fixed="top" bg="white" expand="lg">
+      <Navbar
+        className="justify-content-between"
+        fixed="top"
+        bg="white"
+        expand="lg"
+      >
         <Link to="/">
           <Navbar.Brand>
             <img
