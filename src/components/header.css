@@ -2,6 +2,12 @@
   margin-left: 12px;
 }
 
+@media(max-width: 640px) {
+  .use-basic-credit-btn {
+    display: none;
+  }
+}
+
 a.use-basic-credit-btn.btn.btn-primary.btn-sm.nav-link {
   color: white;
 }
