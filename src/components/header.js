@@ -1,15 +1,15 @@
+import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
 import { NavDropdown } from 'react-bootstrap';
 import { externalLinks } from '../common/externalLinks';
 import './header.css';
-import React from 'react';
 
 const Header = () => {
   return (
     <header>
-      <Navbar fixed="top" bg="dark" variant="dark" expand="lg">
+      <Navbar fixed="top" bg="transparent" expand="lg">
         <Link to="/">
           <Navbar.Brand>
             <img
@@ -49,16 +49,16 @@ const Header = () => {
               <NavDropdown.Item href="">Work with Us</NavDropdown.Item>
               <NavDropdown.Item href="">Contact Us</NavDropdown.Item>
             </NavDropdown>
-            {/* <Nav.Link
-              className="use-basic-credit-btn btn btn-primary btn-sm"
-              variant="primary"
-              size="sm"
-              href={externalLinks.basicCreditApp}
-            >
-              Use Basic Credit
-            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
+        <Nav.Link
+          className="use-basic-credit-btn btn btn-primary btn-sm"
+          variant="primary"
+          size="sm"
+          href={externalLinks.basicCreditApp}
+        >
+          Use Basic Credit
+        </Nav.Link>
       </Navbar>
     </header>
   );
