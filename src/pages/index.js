@@ -12,7 +12,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className="index">
       <Row className="justify-content-center">
-        <Col md="6" className="text-center">
+        <Col md="6">
           <h1>Decentralized Collateral Free Loans</h1>
           <h2>
             Basic Credit is a decentralized protocol to borrow and lend without
