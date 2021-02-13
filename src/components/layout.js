@@ -18,10 +18,12 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <main>
-        <Container fluid>{children}</Container>
-      </main>
-      <Footer />
+      <body>
+        <main>
+          <Container fluid>{children}</Container>
+        </main>
+        <Footer />
+      </body>
     </div>
   );
 };

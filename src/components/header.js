@@ -1,14 +1,20 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
-import { Container } from 'react-bootstrap';
+import { Container, NavDropdown } from 'react-bootstrap';
+import './header.css';
 import React from 'react';
 
 const Header = () => {
   return (
     <header>
-      <Navbar bg="dark" variant="dark">
-        <Container fluid>
+      <Container fluid>
+        <Navbar
+          fixed="top"
+          bg="dark"
+          variant="dark"
+          className="justify-content-between"
+        >
           <Link to="/">
             <Navbar.Brand>
               <img
@@ -21,19 +27,42 @@ const Header = () => {
               Basic Credit
             </Navbar.Brand>
           </Link>
-          <Nav className="justify-content-end">
-            <Link to="/faq">
-              <Nav.Link as="span">FAQ</Nav.Link>
+          <Nav>
+            <Link to="/funding">
+              <Nav.Link as="span">Crowd Funding</Nav.Link>
             </Link>
-            <Link to="/about">
-              <Nav.Link as="span">About</Nav.Link>
-            </Link>
-            <Link to="/app">
-              <Nav.Link as="span">Use Basic Credit</Nav.Link>
-            </Link>
+            <NavDropdown title="Community">
+              <NavDropdown.Item href="https://discord.com">
+                Discord
+              </NavDropdown.Item>
+              <NavDropdown.Item href="https://reddit.com">
+                Reddit
+              </NavDropdown.Item>
+              <NavDropdown.Item href="https://twitter.com">
+                Twitter
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown title="About">
+              <Link to="/documentation">
+                <NavDropdown.Item as="span">Documentation</NavDropdown.Item>
+              </Link>
+              <NavDropdown.Item href="https://github.com/basiccredit">
+                GitHub
+              </NavDropdown.Item>
+              <NavDropdown.Item href="">Work with Us</NavDropdown.Item>
+              <NavDropdown.Item href="">Contact Us</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link
+              className="use-basic-credit-btn btn btn-primary btn-sm"
+              variant="primary"
+              size="sm"
+              href="https://google.com"
+            >
+              Use Basic Credit
+            </Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
+        </Navbar>
+      </Container>
     </header>
   );
 };

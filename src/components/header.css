@@ -1,0 +1,7 @@
+.use-basic-credit-btn {
+  margin-left: 12px;
+}
+
+a.use-basic-credit-btn.btn.btn-primary.btn-sm.nav-link {
+  color: white;
+}
