@@ -1,44 +1,46 @@
+import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
-import { Container, NavDropdown } from 'react-bootstrap';
+import { NavDropdown } from 'react-bootstrap';
+import { externalLinks } from '../common/externalLinks';
+import Drawer from './drawer';
 import './header.css';
-import React from 'react';
 
 const Header = () => {
   return (
     <header>
-      <Container fluid>
-        <Navbar
-          fixed="top"
-          bg="dark"
-          variant="dark"
-          className="justify-content-between"
-        >
-          <Link to="/">
-            <Navbar.Brand>
-              <img
-                alt=""
-                src={Logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-              Basic Credit
-            </Navbar.Brand>
-          </Link>
+      <Navbar
+        className="justify-content-between"
+        fixed="top"
+        bg="white"
+        expand="lg"
+      >
+        <Link to="/">
+          <Navbar.Brand>
+            <img
+              alt="Basic Credit logo"
+              src={Logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            Basic Credit
+          </Navbar.Brand>
+        </Link>
+        <Navbar className="desktop-nav">
           <Nav>
             <Link to="/funding">
               <Nav.Link as="span">Crowd Funding</Nav.Link>
             </Link>
             <NavDropdown title="Community">
-              <NavDropdown.Item href="https://discord.com">
+              <NavDropdown.Item href={externalLinks.discord}>
                 Discord
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://reddit.com">
+              <NavDropdown.Item href={externalLinks.reddit}>
                 Reddit
               </NavDropdown.Item>
-              <NavDropdown.Item href="https://twitter.com">
+              <NavDropdown.Item href={externalLinks.twitter}>
                 Twitter
               </NavDropdown.Item>
             </NavDropdown>
@@ -46,23 +48,24 @@ const Header = () => {
               <Link to="/documentation">
                 <NavDropdown.Item as="span">Documentation</NavDropdown.Item>
               </Link>
-              <NavDropdown.Item href="https://github.com/basiccredit">
+              <NavDropdown.Item href={externalLinks.github}>
                 GitHub
               </NavDropdown.Item>
               <NavDropdown.Item href="">Work with Us</NavDropdown.Item>
               <NavDropdown.Item href="">Contact Us</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link
-              className="use-basic-credit-btn btn btn-primary btn-sm"
-              variant="primary"
-              size="sm"
-              href="https://google.com"
-            >
-              Use Basic Credit
-            </Nav.Link>
           </Nav>
+          <Nav.Link
+            className="use-basic-credit-btn btn btn-primary btn-sm"
+            variant="primary"
+            size="sm"
+            href={externalLinks.basicCreditApp}
+          >
+            Use Basic Credit
+          </Nav.Link>
         </Navbar>
-      </Container>
+        <Drawer />
+      </Navbar>
     </header>
   );
 };

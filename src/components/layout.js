@@ -10,21 +10,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
 import './layout.css';
-
 import Header from './header';
-import Footer from './footer';
+// import Footer from './footer';
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Header />
-      <body>
-        <main>
-          <Container fluid>{children}</Container>
-        </main>
-        <Footer />
-      </body>
-    </div>
+    <>
+      <Container fluid>
+        <Header />
+        <main>{children}</main>
+        {/* <Footer /> */}
+      </Container>
+    </>
   );
 };
 

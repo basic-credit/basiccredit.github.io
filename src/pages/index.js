@@ -12,7 +12,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <div className="index">
       <Row className="justify-content-center">
-        <Col md="6" className="text-center">
+        <Col md="6">
           <h1>Decentralized Collateral Free Loans</h1>
           <h2>
             Basic Credit is a decentralized protocol to borrow and lend without
@@ -20,13 +20,13 @@ const IndexPage = () => (
           </h2>
           <Nav className="home-nav justify-content-center">
             <Link to="/faq">
-              <Nav.Link className="btn btn-outline-light btn-lg" as="span">
+              <Nav.Link className="btn btn-outline-dark btn-lg" as="span">
                 Fund Project
               </Nav.Link>
             </Link>
             <Link to="/about">
               <Nav.Link
-                className="home-nav-right-button btn btn-outline-light btn-lg"
+                className="home-nav-right-button btn btn-outline-dark btn-lg"
                 as="span"
               >
                 Litepaper
@@ -60,7 +60,7 @@ const IndexPage = () => (
             rather than upfront collateral that you can provide and helps you
             invest in high quality assets with long term potential
           </p>
-          <Button variant="outline-light">Learn More</Button>
+          <Button variant="outline-dark">Learn More</Button>
         </Col>
       </Row>
     </div>
