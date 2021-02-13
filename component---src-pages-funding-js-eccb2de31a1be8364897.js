@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{kae1:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),u=t("Bl7J"),r=t("vrFN");n.default=function(){return l.a.createElement(u.a,null,l.a.createElement(r.a,{title:"Funding"}),l.a.createElement("h1",null,"Funding"))}}}]);
+//# sourceMappingURL=component---src-pages-funding-js-eccb2de31a1be8364897.js.map
