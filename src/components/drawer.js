@@ -10,35 +10,35 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import './drawer.css';
 
-const getExternalListItem = ({ link, key, text }) => (
-  <a href={externalLinks[link]}>
-    <ListItem key={key}>
+const getExternalListItem = ({ link, text }) => (
+  <ListItem key={text}>
+    <a href={externalLinks[link]}>
       <ListItemText primary={text} />
-    </ListItem>
-  </a>
+    </a>
+  </ListItem>
 );
 
 const getCommunityListItems = () =>
   [
-    { link: 'discord', key: 'discord', text: 'Discord' },
-    { link: 'reddit', key: 'reddit', text: 'Reddit' },
-    { link: 'twitter', key: 'twitter', text: 'Twitter' },
+    { link: 'discord', text: 'Discord' },
+    { link: 'reddit', text: 'Reddit' },
+    { link: 'twitter', text: 'Twitter' },
   ].map((listItemInfo) => getExternalListItem(listItemInfo));
 
 const getAboutListItems = () => {
   const internalLinks = [
-    { link: '/documentation', key: 'documentation', text: 'Documentation' },
-    { link: '/', key: 'work-with-us', text: 'Work with Us' },
-    { link: '/', key: 'contact-us', text: 'Contact Us' },
+    { link: '/documentation', text: 'Documentation' },
+    { link: '/', text: 'Work with Us' },
+    { link: '/', text: 'Contact Us' },
   ].map((aboutListItemInfo) => (
-    <Link to={aboutListItemInfo.link}>
-      <ListItem key={aboutListItemInfo.key}>
+    <ListItem key={aboutListItemInfo.text}>
+      <Link to={aboutListItemInfo.link}>
         <ListItemText primary={aboutListItemInfo.text} />
-      </ListItem>
-    </Link>
+      </Link>
+    </ListItem>
   ));
   const externalLinks = [
-    getExternalListItem({ link: 'github', key: 'github', text: 'GitHub' }),
+    getExternalListItem({ link: 'github', text: 'GitHub' }),
   ];
 
   return internalLinks.concat(externalLinks);
@@ -69,7 +69,11 @@ const Drawer = () => {
       <Button className="mobile-nav" onClick={toggleDrawer(true)}>
         <MenuIcon />
       </Button>
-      <MaterialUiDrawer anchor="right" open={isDrawerToggled} onClose={toggleDrawer(false)}>
+      <MaterialUiDrawer
+        anchor="right"
+        open={isDrawerToggled}
+        onClose={toggleDrawer(false)}
+      >
         <div
           className={classes.list}
           role="presentation"
@@ -77,9 +81,9 @@ const Drawer = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
-            <Link to="/funding">
-              <ListItem button key={'Funding'}>
-                <ListItemText primary={'Funding'} />
+            <Link to="/funding" key="Funding-link">
+              <ListItem button key="Funding">
+                <ListItemText primary="Funding" />
               </ListItem>
             </Link>
           </List>
