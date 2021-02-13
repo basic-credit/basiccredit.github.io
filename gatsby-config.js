@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: '/basic-credit-website',
   siteMetadata: {
     title: `Basic Credit`,
     description: `Decentralized Collateral Free Loans`,
