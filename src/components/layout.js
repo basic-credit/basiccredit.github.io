@@ -18,11 +18,9 @@ const Layout = ({ children }) => {
   return (
     <>
       <Container fluid>
-      <Header />
-      <main>
-        {children}
-      </main>
-      {/* <Footer /> */}
+        <Header />
+        <main>{children}</main>
+        {/* <Footer /> */}
       </Container>
     </>
   );
