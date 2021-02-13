@@ -1,7 +1,7 @@
 import { Navbar, Nav } from 'react-bootstrap';
 import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
-import { Container, NavDropdown } from 'react-bootstrap';
+import { externalLinks } from '../common/externalLinks';
 import './header.css';
 import React from 'react';
 
