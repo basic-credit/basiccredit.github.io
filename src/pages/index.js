@@ -1,11 +1,39 @@
 import React from 'react';
+import styled from 'styled-components'
 import { Row, Col, Nav, Button } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
+import { externalLinks } from '../common/externalLinks';
 import './index.css';
+
+const StyledItemRow = styled.nav`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0rem;
+  width: 100%;
+  & > *:not(:first-of-type) {
+    margin-top: 12px;
+  }
+  @media (min-width: 640px) {
+    flex-direction: row;
+    justify-content: center;
+    & > * {
+      margin-bottom: 12px;
+    }
+    & > *:not(:first-of-type) {
+      margin-top: 0;
+      margin-left: 12px;
+    }
+  }
+  @media (min-width: 960px) {
+    box-sizing: border-box;
+    transition: right 0.25s ease;
+  }
+`
 
 const IndexPage = () => (
   <Layout>
@@ -18,22 +46,18 @@ const IndexPage = () => (
             Basic Credit is a decentralized protocol to borrow and lend without
             upfront collateral.
           </h2>
-          <Nav className="home-nav justify-content-center">
-            <Link to="/faq">
-              <Nav.Link className="btn btn-outline-dark btn-lg" as="span">
-                Fund Project
-              </Nav.Link>
-            </Link>
-            <Link to="/about">
-              <Nav.Link
-                className="home-nav-right-button btn btn-outline-dark btn-lg"
-                as="span"
-              >
-                Litepaper
-              </Nav.Link>
-            </Link>
-          </Nav>
         </Col>
+      </Row>
+      <Row className="button-section">
+        <StyledItemRow>
+          <Button href={externalLinks.basicCreditApp} variant="primary" size="lg">Use Basic Credit</Button>
+          <Link to="/funding">
+            <Button variant="outline-primary" size="lg">Fund Project</Button>
+          </Link>
+          <Link to="/documentation">
+            <Button variant="outline-primary" size="lg">Documentation</Button>
+          </Link>
+        </StyledItemRow>
       </Row>
       <Row className="section justify-content-center">
         <Col md="6">
@@ -45,14 +69,8 @@ const IndexPage = () => (
           </p>
           <Button variant="outline-light">Learn More</Button>
         </Col>
-        <Col md="6">
-          <Image />
-        </Col>
       </Row>
       <Row className="section justify-content-center">
-        <Col md="6">
-          <Image />
-        </Col>
         <Col className="text-right" md="6">
           <h2>Zero Upfront Collateral</h2>
           <p>
