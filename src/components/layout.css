@@ -11,6 +11,7 @@ body {
 
 main {
   min-height: 100%;
+  margin-top: 46px;
 }
 
 h1 {
@@ -28,7 +29,7 @@ h2 {
 
 @media(max-width: 440px) {
   h1 {
-    font-size: 52px;
+    font-size: 48px;
     text-align: left;
   }
 
@@ -40,7 +41,7 @@ h2 {
 @media(max-width: 640px) {
   h1 {
     width: 100%;
-    font-size: 58px;
+    font-size: 54px;
     text-align: left;
   }
   body {

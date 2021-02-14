@@ -1,6 +1,15 @@
-.index, .section {
+.section {
   margin: 3rem 0 12rem 0;  
 }
+
+.button-section {
+  margin-top: 16px;
+}
+
+.index {
+  margin-top: 104px;
+}
+
 .home-nav-right-button {
   margin-left: 24px;
 }
