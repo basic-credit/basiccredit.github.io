@@ -56,8 +56,7 @@ const Header = () => {
             </NavDropdown>
           </Nav>
           <Nav.Link
-            className="use-basic-credit-btn btn btn-primary btn-sm"
-            variant="primary"
+            className="use-basic-credit-btn btn btn-outline-primary btn-sm"
             size="sm"
             href={externalLinks.basicCreditApp}
           >
