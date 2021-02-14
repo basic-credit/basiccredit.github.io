@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { externalLinks } from '../common/externalLinks';
 import './index.css';
 
 const StyledItemRow = styled.nav`
@@ -35,50 +34,71 @@ const StyledItemRow = styled.nav`
   }
 `;
 
+const StyledIndexDiv = styled.div`
+  margin-top: 148px;
+`
+const StyledTitleText = styled.h1`
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+`;
+const StyledTitleBody = styled.h2`
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+`;
+const StyledTitleSection = styled.div`
+  margin-bottom: 40px;
+`
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className="index">
-      <Row className="justify-content-center">
+    <StyledIndexDiv>
+      <StyledTitleSection>
+      <Row className="title-row justify-content-center">
         <Col md="6">
-          <h1>Decentralized Collateral Free Loans</h1>
-          <h2>
+          <StyledTitleText>Decentralized Collateral Free Loans</StyledTitleText>
+          <StyledTitleBody>
             Basic Credit is a decentralized protocol to borrow and lend without
             upfront collateral.
-          </h2>
+          </StyledTitleBody>
         </Col>
       </Row>
       <Row className="button-section">
         <StyledItemRow>
-          <Button
+          {/* <Button
             href={externalLinks.basicCreditApp}
             variant="primary"
             size="lg"
           >
             Use Basic Credit
-          </Button>
+          </Button> */}
           <Link to="/funding">
-            <Button variant="outline-primary" size="lg">
+            <Button variant="primary" size="lg">
               Fund Project
             </Button>
           </Link>
           <Link to="/documentation">
-            <Button variant="outline-primary" size="lg">
+            <Button variant="primary" size="lg">
               Documentation
             </Button>
           </Link>
         </StyledItemRow>
       </Row>
+      </StyledTitleSection>
       <HowSection />
       <MissionSection />
-    </div>
+    </StyledIndexDiv>
   </Layout>
 );
 
 export default IndexPage;
 
 const StyledSectionTitle = styled.h1`
-  font-size: 48px;
+  font-size: 32px;
   white-space: wrap;
   overflow-wrap: normal;
   max-width: 900px;
@@ -110,6 +130,23 @@ const StyledBodySubText = styled.h3`
   }
 `;
 
+const StyledSection = styled.div`
+  margin-top: 104px;
+  @media (max-width: 960px) {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 600px;
+    margin-top: 4rem;
+  }
+  @media (max-width: 640px) {
+      width: 100%;
+      font-weight: 400;
+      margin-top: 4rem;
+      text-align: left;
+  }
+`
+
 const HowSectionCard = (title, text) => {
   return (
     <Card className="how-card">
@@ -124,7 +161,7 @@ const HowSectionCard = (title, text) => {
 
 const HowSection = () => {
   return (
-    <div className="section">
+    <StyledSection>
       <Row className="justify-content-center">
         <Col md="6">
           <StyledSectionTitle>How it Works</StyledSectionTitle>
@@ -156,24 +193,26 @@ const HowSection = () => {
           </CardDeck>
         </Col>
       </Row>
-    </div>
+    </StyledSection>
   );
 };
 
 const MissionSection = () => {
   return (
-    <div className="section">
-      <Row className="section justify-content-center">
-        <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
-        <StyledBodySubText>
-          Collateral-based lending protocols only enable people with assets
-          (rich people). In a truly decentralized financial future, we believe
-          it is extremely important to have a protocol where anyone can borrow
-          without upfront collateral. Only then can everyone have equal access
-          to grow their wealth.
-        </StyledBodySubText>
-        <StyledBodySubText>Help us build that future!</StyledBodySubText>
+    <StyledSection>
+      <Row className="justify-content-center">
+        <Col md="8">
+          <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
+          <StyledBodySubText>
+            Collateral-based lending protocols only enable people with assets
+            (rich people). In a truly decentralized financial future, we believe
+            it is extremely important to have a protocol where anyone can borrow
+            without upfront collateral. Only then can everyone have equal access
+            to grow their wealth.
+          </StyledBodySubText>
+          <StyledBodySubText>Help us build that future!</StyledBodySubText>
+        </Col>
       </Row>
-    </div>
+    </StyledSection>
   );
 };

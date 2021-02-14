@@ -1,39 +1,9 @@
-.section {
-  margin-top: 104px;
-}
-
-@media (max-width: 960px) {
-  .section {
-    width: 100%;
-    font-size: 2rem;
-    line-height: 2.5rem;
-    max-width: 600px;
-    margin-top: 4rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .section {
-    width: 100%;
-    font-weight: 400;
-    margin-top: 4rem;
-    text-align: left;
-  }
-}
-
 .button-section {
   margin-top: 16px;
 }
 
-.index {
-  margin-top: 104px;
-}
-
-.home-nav-right-button {
-  margin-left: 24px;
-}
-.home-nav {
-  margin-top: 2rem;
+.title-row {
+  margin-bottom: 32px;
 }
 
 .styled-card-deck {
