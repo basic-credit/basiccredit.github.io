@@ -164,17 +164,15 @@ const MissionSection = () => {
   return (
     <div className="section">
       <Row className="section justify-content-center">
-        <Col className="text-right" md="6">
-          <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
-          <StyledBodySubText>
-            Collateral-based lending protocols only enable people with assets
-            (rich people). In a truly decentralized financial future, we believe
-            it is extremely important to have a protocol where anyone can borrow
-            without upfront collateral. Only then can everyone have equal access
-            to grow their wealth.
-          </StyledBodySubText>
-          <StyledBodySubText>Help us build that future!</StyledBodySubText>
-        </Col>
+        <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
+        <StyledBodySubText>
+          Collateral-based lending protocols only enable people with assets
+          (rich people). In a truly decentralized financial future, we believe
+          it is extremely important to have a protocol where anyone can borrow
+          without upfront collateral. Only then can everyone have equal access
+          to grow their wealth.
+        </StyledBodySubText>
+        <StyledBodySubText>Help us build that future!</StyledBodySubText>
       </Row>
     </div>
   );
