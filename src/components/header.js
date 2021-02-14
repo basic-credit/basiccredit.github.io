@@ -1,18 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'gatsby';
 import { NavDropdown } from 'react-bootstrap';
 import { externalLinks } from '../common/externalLinks';
 import Drawer from './drawer';
+import useDocumentScrollThrottled from '../utils/useDocumentScrolledThrottle';
 import './header.css';
 
 const Header = () => {
+  const [headerBG, setHeaderBG] = useState(false);
+  useDocumentScrollThrottled((callbackData) => {
+    const { currentScrollTop } = callbackData;
+
+    setHeaderBG(currentScrollTop > 2);
+  });
+
   return (
     <header>
       <Navbar
-        className="justify-content-between"
+        className="justify-content-between navbar navbar-expand-lg navbar-light bg-white fixed-top"
         fixed="top"
-        bg="white"
+        bg={headerBG ? 'white' : 'transparent'}
         expand="lg"
       >
         <Link to="/">
