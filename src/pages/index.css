@@ -7,8 +7,22 @@
 }
 
 .styled-card-deck {
-  margin-top: 32px;
+  margin-top: 48px;
+}
+@media (max-width: 640px) {
+  .styled-card-deck {
+    align-items: center;
+    text-align: center;
+  }
 }
 .how-card {
-  max-width: 270px;
+  max-width: 280px;
+  min-width: 210px;
+}
+.how-card-body {
+  position: relative;
+  text-align: center;
+}
+.how-card-title {
+  padding-top: 12px;
 }

@@ -147,17 +147,43 @@ const StyledSection = styled.div`
   }
 `
 
-const HowSectionCard = (title, text) => {
+const StyledCardCircle = styled.div`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  border: 1px solid rgba(0,0,0,.125);
+  color: black;
+  background: white;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%)
+`
+
+const HowSectionCard = (title, text, index) => {
   return (
-    <Card className="how-card">
-      <Card.Body>
-        <Card.Title>{title}</Card.Title>
-        <Card.Text>{text}</Card.Text>
+    <Card key={title} className="how-card">
+      <Card.Body className="how-card-body">
+        <StyledCardCircle>{index + 1}</StyledCardCircle>
+        <Card.Title className="how-card-title">{title}</Card.Title>
+        <Card.Text className="how-card-body-text">{text}</Card.Text>
         <Card.Link>Learn More</Card.Link>
       </Card.Body>
     </Card>
   );
 };
+
+const HowSectionCards = () => (
+  [
+    { title: 'Signup', text: 'Join our Basic Network which is an open, community run identity verification platform.' },
+    { title: 'Get Verified', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
+    { title: 'Borrow', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
+    { title: 'Invest', text: 'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto' },
+  ].map(({ title, text }, index) => HowSectionCard(title, text, index))
+);
 
 const HowSection = () => {
   return (
@@ -174,22 +200,7 @@ const HowSection = () => {
       <Row className="justify-content-center">
         <Col md="9">
           <CardDeck className="styled-card-deck">
-            {HowSectionCard(
-              'Signup',
-              'Join our Basic Network which is an open, community run identity verification platform.'
-            )}
-            {HowSectionCard(
-              'Get Verified',
-              'Get your identity & income verified by the community validators. All of your data is always in your control.'
-            )}
-            {HowSectionCard(
-              'Borrow',
-              "Once verified you'll automatically get a credit limit which can be borrowed anytime from the lending pool"
-            )}
-            {HowSectionCard(
-              'Invest',
-              'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto'
-            )}
+            {HowSectionCards()}
           </CardDeck>
         </Col>
       </Row>
