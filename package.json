@@ -4,6 +4,9 @@
   "description": "Basic Credit website",
   "version": "0.1.0",
   "author": "Basic Credit <thebasiccredit@gmail.com>",
+  "engines": {
+    "node": "14.15.4"
+  },
   "dependencies": {
     "@fontsource/roboto": "^4.2.1",
     "@material-ui/core": "^4.11.3",
@@ -31,6 +34,7 @@
   },
   "license": "GPL-3.0",
   "devDependencies": {
+    "eslint-config-react-app": "^6.0.0",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -44,7 +48,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "deploy": "cp CNAME public/ && gatsby build && gh-pages -d public",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
