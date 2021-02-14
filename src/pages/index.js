@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Card, CardDeck } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -69,7 +69,8 @@ const IndexPage = () => (
           </Link>
         </StyledItemRow>
       </Row>
-      <Row className="section justify-content-center">
+      <HowSection />
+      {/* <Row className="section justify-content-center">
         <Col md="6">
           <h2>Decentralized Identity</h2>
           <p>
@@ -79,7 +80,7 @@ const IndexPage = () => (
           </p>
           <Button variant="outline-light">Learn More</Button>
         </Col>
-      </Row>
+      </Row> */}
       <Row className="section justify-content-center">
         <Col className="text-right" md="6">
           <h2>Zero Upfront Collateral</h2>
@@ -96,3 +97,78 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+const StyledSectionTitle = styled.h1`
+  font-size: 48px;
+  white-space: wrap;
+  overflow-wrap: normal;
+  max-width: 900px;
+  text-align: center;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 600px;
+    margin-top: 4rem;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    font-weight: 400;
+    margin-top: 4rem;
+    text-align: left;
+  }
+`;
+
+const StyledBodySubText = styled.h3`
+  max-width: 960px;
+  text-align: center;
+  line-height: 160%;
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`;
+
+const HowSectionCard = (title, text) => {
+  return (
+    <Card>
+      <Card.Body>
+        <Card.Title>
+          {title} 
+        </Card.Title>
+        <Card.Text>{text}</Card.Text>
+        <Button variant="primary" size="lg">
+          Learn More
+        </Button>
+      </Card.Body>
+    </Card>
+  )
+}
+
+const HowSection = () => {
+  return (
+    <div className="section">
+    <Row className="justify-content-center">
+      <Col md="6">
+        <StyledSectionTitle>How it Works</StyledSectionTitle>
+        <StyledBodySubText>
+          Using Basic Credit, anyone can borrow money based on their monthly
+          income and can use it to invest in high-quality crypto assets.
+        </StyledBodySubText>
+      </Col>
+    </Row>
+    <Row className="justify-content-center">
+      <Col md="8">
+        <CardDeck>
+          {HowSectionCard('Signup', 'Join our Basic Network which is an open, community run identity verification platform.')}
+          {HowSectionCard('Get Verified', 'Get your identity & income verified by the community validators. All of your data is always in your control.')}
+          {HowSectionCard('Borrow', "Once verified you'll automatically get a credit limit which can be borrowed anytime from the lending pool")}
+          {HowSectionCard('Invest', 'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto')}
+        </CardDeck>
+      </Col>
+    </Row>
+    </div>
+  );
+};
+
+const MissionSection = () => {};
