@@ -173,9 +173,7 @@ const MissionSection = () => {
             without upfront collateral. Only then can everyone have equal access
             to grow their wealth.
           </StyledBodySubText>
-          <StyledBodySubText>
-            Help us build that future!
-          </StyledBodySubText>
+          <StyledBodySubText>Help us build that future!</StyledBodySubText>
         </Col>
       </Row>
     </div>
