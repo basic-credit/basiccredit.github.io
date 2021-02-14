@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
-import { Row, Col, Nav, Button } from 'react-bootstrap';
+import styled from 'styled-components';
+import { Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
@@ -33,7 +33,7 @@ const StyledItemRow = styled.nav`
     box-sizing: border-box;
     transition: right 0.25s ease;
   }
-`
+`;
 
 const IndexPage = () => (
   <Layout>
@@ -50,12 +50,22 @@ const IndexPage = () => (
       </Row>
       <Row className="button-section">
         <StyledItemRow>
-          <Button href={externalLinks.basicCreditApp} variant="primary" size="lg">Use Basic Credit</Button>
+          <Button
+            href={externalLinks.basicCreditApp}
+            variant="primary"
+            size="lg"
+          >
+            Use Basic Credit
+          </Button>
           <Link to="/funding">
-            <Button variant="outline-primary" size="lg">Fund Project</Button>
+            <Button variant="outline-primary" size="lg">
+              Fund Project
+            </Button>
           </Link>
           <Link to="/documentation">
-            <Button variant="outline-primary" size="lg">Documentation</Button>
+            <Button variant="outline-primary" size="lg">
+              Documentation
+            </Button>
           </Link>
         </StyledItemRow>
       </Row>
