@@ -1,5 +1,4 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
-import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
 import React from 'react';
 
@@ -13,16 +12,7 @@ const Footer = () => {
       <Navbar sticky="bottom" bg="dark" variant="dark">
         <Container fluid>
           <Link to="/">
-            <Navbar.Brand>
-              <img
-                alt=""
-                src={Logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-              Basic Credit
-            </Navbar.Brand>
+            <Navbar.Brand>Basic Credit</Navbar.Brand>
           </Link>
           <Nav className="justify-content-space-evenly">
             <Link to="/funding">

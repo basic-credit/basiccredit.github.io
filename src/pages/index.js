@@ -36,7 +36,7 @@ const StyledItemRow = styled.nav`
 
 const StyledIndexDiv = styled.div`
   margin-top: 148px;
-`
+`;
 const StyledTitleText = styled.h1`
   font-size: 48px;
   font-weight: 500;
@@ -51,43 +51,45 @@ const StyledTitleBody = styled.h2`
 `;
 const StyledTitleSection = styled.div`
   margin-bottom: 40px;
-`
+`;
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <StyledIndexDiv>
       <StyledTitleSection>
-      <Row className="title-row justify-content-center">
-        <Col md="6">
-          <StyledTitleText>Decentralized Collateral Free Loans</StyledTitleText>
-          <StyledTitleBody>
-            Basic Credit is a decentralized protocol to borrow and lend without
-            upfront collateral.
-          </StyledTitleBody>
-        </Col>
-      </Row>
-      <Row className="button-section">
-        <StyledItemRow>
-          {/* <Button
+        <Row className="title-row justify-content-center">
+          <Col md="6">
+            <StyledTitleText>
+              Decentralized Collateral Free Loans
+            </StyledTitleText>
+            <StyledTitleBody>
+              Basic Credit is a decentralized protocol to borrow and lend
+              without upfront collateral.
+            </StyledTitleBody>
+          </Col>
+        </Row>
+        <Row className="button-section">
+          <StyledItemRow>
+            {/* <Button
             href={externalLinks.basicCreditApp}
             variant="primary"
             size="lg"
           >
             Use Basic Credit
           </Button> */}
-          <Link to="/funding">
-            <Button variant="primary" size="lg">
-              Fund Project
-            </Button>
-          </Link>
-          <Link to="/documentation">
-            <Button variant="primary" size="lg">
-              Documentation
-            </Button>
-          </Link>
-        </StyledItemRow>
-      </Row>
+            <Link to="/funding">
+              <Button variant="primary" size="lg">
+                Fund Project
+              </Button>
+            </Link>
+            <Link to="/documentation">
+              <Button variant="primary" size="lg">
+                Documentation
+              </Button>
+            </Link>
+          </StyledItemRow>
+        </Row>
       </StyledTitleSection>
       <HowSection />
       <MissionSection />
@@ -140,12 +142,12 @@ const StyledSection = styled.div`
     margin-top: 4rem;
   }
   @media (max-width: 640px) {
-      width: 100%;
-      font-weight: 400;
-      margin-top: 4rem;
-      text-align: left;
+    width: 100%;
+    font-weight: 400;
+    margin-top: 4rem;
+    text-align: left;
   }
-`
+`;
 
 const StyledCardCircle = styled.div`
   width: 36px;
@@ -154,14 +156,14 @@ const StyledCardCircle = styled.div`
   text-align: center;
   font-size: 24px;
   font-weight: 200;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid rgba(0, 0, 0, 0.125);
   color: black;
   background: white;
   position: absolute;
   top: -20px;
   left: 50%;
-  transform: translateX(-50%)
-`
+  transform: translateX(-50%);
+`;
 
 const HowSectionCard = (title, text, index) => {
   return (
@@ -176,14 +178,29 @@ const HowSectionCard = (title, text, index) => {
   );
 };
 
-const HowSectionCards = () => (
+const HowSectionCards = () =>
   [
-    { title: 'Signup', text: 'Join our Basic Network which is an open, community run identity verification platform.' },
-    { title: 'Get Verified', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
-    { title: 'Borrow', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
-    { title: 'Invest', text: 'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto' },
-  ].map(({ title, text }, index) => HowSectionCard(title, text, index))
-);
+    {
+      title: 'Signup',
+      text:
+        'Join our Basic Network which is an open, community run identity verification platform.',
+    },
+    {
+      title: 'Get Verified',
+      text:
+        'Get your identity & income verified by the community validators. All of your data is always in your control.',
+    },
+    {
+      title: 'Borrow',
+      text:
+        'Get your identity & income verified by the community validators. All of your data is always in your control.',
+    },
+    {
+      title: 'Invest',
+      text:
+        'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto',
+    },
+  ].map(({ title, text }, index) => HowSectionCard(title, text, index));
 
 const HowSection = () => {
   return (
@@ -199,9 +216,7 @@ const HowSection = () => {
       </Row>
       <Row className="justify-content-center">
         <Col md="9">
-          <CardDeck className="styled-card-deck">
-            {HowSectionCards()}
-          </CardDeck>
+          <CardDeck className="styled-card-deck">{HowSectionCards()}</CardDeck>
         </Col>
       </Row>
     </StyledSection>

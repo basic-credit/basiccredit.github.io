@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import Logo from '../images/gatsby-icon.png';
 import { Link } from 'gatsby';
 import { NavDropdown } from 'react-bootstrap';
 import { externalLinks } from '../common/externalLinks';
@@ -17,16 +16,7 @@ const Header = () => {
         expand="lg"
       >
         <Link to="/">
-          <Navbar.Brand>
-            <img
-              alt="Basic Credit logo"
-              src={Logo}
-              width="30"
-              height="30"
-              className="d-inline-block align-top"
-            />{' '}
-            Basic Credit
-          </Navbar.Brand>
+          <Navbar.Brand>Basic Credit</Navbar.Brand>
         </Link>
         <Navbar className="desktop-nav">
           <Nav>
