@@ -5,7 +5,8 @@ html, body {
 
 body {
   padding-top: 32px;
-  background-color: white;
+  background: rgb(0,123,255);
+  background: radial-gradient(circle, rgba(0,123,255,0.04) 0%, rgba(9,9,121,0.13) 31%, rgba(0,212,255,0) 77%);
   color: black;
 }
 
