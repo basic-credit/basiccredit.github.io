@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.15.4
+    - run: yarn install
+    - run: yarn lint --max-warnings 0
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.15.4
+    - run: yarn install
+    - run: yarn build
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Test
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.15.4
+    - run: yarn install
+    - run: yarn test
