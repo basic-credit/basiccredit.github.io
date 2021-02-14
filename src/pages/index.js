@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Card, CardDeck } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { externalLinks } from '../common/externalLinks';
 import './index.css';
 
 const StyledItemRow = styled.nav`
@@ -35,64 +34,196 @@ const StyledItemRow = styled.nav`
   }
 `;
 
+const StyledIndexDiv = styled.div`
+  margin-top: 148px;
+`
+const StyledTitleText = styled.h1`
+  font-size: 48px;
+  font-weight: 500;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+`;
+const StyledTitleBody = styled.h2`
+  font-size: 24px;
+  font-weight: 300;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+`;
+const StyledTitleSection = styled.div`
+  margin-bottom: 40px;
+`
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <div className="index">
-      <Row className="justify-content-center">
+    <StyledIndexDiv>
+      <StyledTitleSection>
+      <Row className="title-row justify-content-center">
         <Col md="6">
-          <h1>Decentralized Collateral Free Loans</h1>
-          <h2>
+          <StyledTitleText>Decentralized Collateral Free Loans</StyledTitleText>
+          <StyledTitleBody>
             Basic Credit is a decentralized protocol to borrow and lend without
             upfront collateral.
-          </h2>
+          </StyledTitleBody>
         </Col>
       </Row>
       <Row className="button-section">
         <StyledItemRow>
-          <Button
+          {/* <Button
             href={externalLinks.basicCreditApp}
             variant="primary"
             size="lg"
           >
             Use Basic Credit
-          </Button>
+          </Button> */}
           <Link to="/funding">
-            <Button variant="outline-primary" size="lg">
+            <Button variant="primary" size="lg">
               Fund Project
             </Button>
           </Link>
           <Link to="/documentation">
-            <Button variant="outline-primary" size="lg">
+            <Button variant="primary" size="lg">
               Documentation
             </Button>
           </Link>
         </StyledItemRow>
       </Row>
-      <Row className="section justify-content-center">
-        <Col md="6">
-          <h2>Decentralized Identity</h2>
-          <p>
-            Basic Credit implements a unique first of its kind peer to peer
-            identity verification system where all your data is completely under
-            your control
-          </p>
-          <Button variant="outline-light">Learn More</Button>
-        </Col>
-      </Row>
-      <Row className="section justify-content-center">
-        <Col className="text-right" md="6">
-          <h2>Zero Upfront Collateral</h2>
-          <p>
-            Basic Credit lets you borrow money based on your monthly income
-            rather than upfront collateral that you can provide and helps you
-            invest in high quality assets with long term potential
-          </p>
-          <Button variant="outline-dark">Learn More</Button>
-        </Col>
-      </Row>
-    </div>
+      </StyledTitleSection>
+      <HowSection />
+      <MissionSection />
+    </StyledIndexDiv>
   </Layout>
 );
 
 export default IndexPage;
+
+const StyledSectionTitle = styled.h1`
+  font-size: 32px;
+  white-space: wrap;
+  overflow-wrap: normal;
+  max-width: 900px;
+  text-align: center;
+
+  @media (max-width: 960px) {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 600px;
+    margin-top: 4rem;
+  }
+  @media (max-width: 640px) {
+    width: 100%;
+    font-weight: 400;
+    margin-top: 4rem;
+    text-align: left;
+  }
+`;
+
+const StyledBodySubText = styled.h3`
+  max-width: 960px;
+  text-align: center;
+  line-height: 160%;
+  font-weight: 400;
+  font-size: 1.25rem;
+  @media (max-width: 640px) {
+    text-align: left;
+  }
+`;
+
+const StyledSection = styled.div`
+  margin-top: 104px;
+  @media (max-width: 960px) {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 600px;
+    margin-top: 4rem;
+  }
+  @media (max-width: 640px) {
+      width: 100%;
+      font-weight: 400;
+      margin-top: 4rem;
+      text-align: left;
+  }
+`
+
+const StyledCardCircle = styled.div`
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  border: 1px solid rgba(0,0,0,.125);
+  color: black;
+  background: white;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%)
+`
+
+const HowSectionCard = (title, text, index) => {
+  return (
+    <Card key={title} className="how-card">
+      <Card.Body className="how-card-body">
+        <StyledCardCircle>{index + 1}</StyledCardCircle>
+        <Card.Title className="how-card-title">{title}</Card.Title>
+        <Card.Text className="how-card-body-text">{text}</Card.Text>
+        <Card.Link>Learn More</Card.Link>
+      </Card.Body>
+    </Card>
+  );
+};
+
+const HowSectionCards = () => (
+  [
+    { title: 'Signup', text: 'Join our Basic Network which is an open, community run identity verification platform.' },
+    { title: 'Get Verified', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
+    { title: 'Borrow', text: 'Get your identity & income verified by the community validators. All of your data is always in your control.' },
+    { title: 'Invest', text: 'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto' },
+  ].map(({ title, text }, index) => HowSectionCard(title, text, index))
+);
+
+const HowSection = () => {
+  return (
+    <StyledSection>
+      <Row className="justify-content-center">
+        <Col md="6">
+          <StyledSectionTitle>How it Works</StyledSectionTitle>
+          <StyledBodySubText>
+            Using Basic Credit, anyone can borrow money based on their monthly
+            income and can use it to invest in high-quality crypto assets.
+          </StyledBodySubText>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col md="9">
+          <CardDeck className="styled-card-deck">
+            {HowSectionCards()}
+          </CardDeck>
+        </Col>
+      </Row>
+    </StyledSection>
+  );
+};
+
+const MissionSection = () => {
+  return (
+    <StyledSection>
+      <Row className="justify-content-center">
+        <Col md="8">
+          <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
+          <StyledBodySubText>
+            Collateral-based lending protocols only enable people with assets
+            (rich people). In a truly decentralized financial future, we believe
+            it is extremely important to have a protocol where anyone can borrow
+            without upfront collateral. Only then can everyone have equal access
+            to grow their wealth.
+          </StyledBodySubText>
+          <StyledBodySubText>Help us build that future!</StyledBodySubText>
+        </Col>
+      </Row>
+    </StyledSection>
+  );
+};

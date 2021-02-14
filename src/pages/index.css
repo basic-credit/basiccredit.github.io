@@ -1,18 +1,28 @@
-.section {
-  margin: 3rem 0 12rem 0;  
-}
-
 .button-section {
   margin-top: 16px;
 }
 
-.index {
-  margin-top: 104px;
+.title-row {
+  margin-bottom: 32px;
 }
 
-.home-nav-right-button {
-  margin-left: 24px;
+.styled-card-deck {
+  margin-top: 48px;
 }
-.home-nav {
-  margin-top: 2rem;
+@media (max-width: 640px) {
+  .styled-card-deck {
+    align-items: center;
+    text-align: center;
+  }
+}
+.how-card {
+  max-width: 280px;
+  min-width: 210px;
+}
+.how-card-body {
+  position: relative;
+  text-align: center;
+}
+.how-card-title {
+  padding-top: 12px;
 }
