@@ -70,28 +70,7 @@ const IndexPage = () => (
         </StyledItemRow>
       </Row>
       <HowSection />
-      {/* <Row className="section justify-content-center">
-        <Col md="6">
-          <h2>Decentralized Identity</h2>
-          <p>
-            Basic Credit implements a unique first of its kind peer to peer
-            identity verification system where all your data is completely under
-            your control
-          </p>
-          <Button variant="outline-light">Learn More</Button>
-        </Col>
-      </Row> */}
-      <Row className="section justify-content-center">
-        <Col className="text-right" md="6">
-          <h2>Zero Upfront Collateral</h2>
-          <p>
-            Basic Credit lets you borrow money based on your monthly income
-            rather than upfront collateral that you can provide and helps you
-            invest in high quality assets with long term potential
-          </p>
-          <Button variant="outline-dark">Learn More</Button>
-        </Col>
-      </Row>
+      <MissionSection />
     </div>
   </Layout>
 );
@@ -124,6 +103,8 @@ const StyledBodySubText = styled.h3`
   max-width: 960px;
   text-align: center;
   line-height: 160%;
+  font-weight: 400;
+  font-size: 1.25rem;
   @media (max-width: 640px) {
     text-align: left;
   }
@@ -131,44 +112,72 @@ const StyledBodySubText = styled.h3`
 
 const HowSectionCard = (title, text) => {
   return (
-    <Card>
+    <Card className="how-card">
       <Card.Body>
-        <Card.Title>
-          {title} 
-        </Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>{text}</Card.Text>
-        <Button variant="primary" size="lg">
-          Learn More
-        </Button>
+        <Card.Link>Learn More</Card.Link>
       </Card.Body>
     </Card>
-  )
-}
+  );
+};
 
 const HowSection = () => {
   return (
     <div className="section">
-    <Row className="justify-content-center">
-      <Col md="6">
-        <StyledSectionTitle>How it Works</StyledSectionTitle>
-        <StyledBodySubText>
-          Using Basic Credit, anyone can borrow money based on their monthly
-          income and can use it to invest in high-quality crypto assets.
-        </StyledBodySubText>
-      </Col>
-    </Row>
-    <Row className="justify-content-center">
-      <Col md="8">
-        <CardDeck>
-          {HowSectionCard('Signup', 'Join our Basic Network which is an open, community run identity verification platform.')}
-          {HowSectionCard('Get Verified', 'Get your identity & income verified by the community validators. All of your data is always in your control.')}
-          {HowSectionCard('Borrow', "Once verified you'll automatically get a credit limit which can be borrowed anytime from the lending pool")}
-          {HowSectionCard('Invest', 'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto')}
-        </CardDeck>
-      </Col>
-    </Row>
+      <Row className="justify-content-center">
+        <Col md="6">
+          <StyledSectionTitle>How it Works</StyledSectionTitle>
+          <StyledBodySubText>
+            Using Basic Credit, anyone can borrow money based on their monthly
+            income and can use it to invest in high-quality crypto assets.
+          </StyledBodySubText>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col md="9">
+          <CardDeck className="styled-card-deck">
+            {HowSectionCard(
+              'Signup',
+              'Join our Basic Network which is an open, community run identity verification platform.'
+            )}
+            {HowSectionCard(
+              'Get Verified',
+              'Get your identity & income verified by the community validators. All of your data is always in your control.'
+            )}
+            {HowSectionCard(
+              'Borrow',
+              "Once verified you'll automatically get a credit limit which can be borrowed anytime from the lending pool"
+            )}
+            {HowSectionCard(
+              'Invest',
+              'Invest the borrowed money in high quality crypto assets & take advantage of the hyper growth that we are seeing in Crypto'
+            )}
+          </CardDeck>
+        </Col>
+      </Row>
     </div>
   );
 };
 
-const MissionSection = () => {};
+const MissionSection = () => {
+  return (
+    <div className="section">
+      <Row className="section justify-content-center">
+        <Col className="text-right" md="6">
+          <StyledSectionTitle>Basic Credit Mission</StyledSectionTitle>
+          <StyledBodySubText>
+            Collateral-based lending protocols only enable people with assets
+            (rich people). In a truly decentralized financial future, we believe
+            it is extremely important to have a protocol where anyone can borrow
+            without upfront collateral. Only then can everyone have equal access
+            to grow their wealth.
+          </StyledBodySubText>
+          <StyledBodySubText>
+            Help us build that future!
+          </StyledBodySubText>
+        </Col>
+      </Row>
+    </div>
+  );
+};

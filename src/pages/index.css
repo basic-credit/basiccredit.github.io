@@ -1,5 +1,5 @@
 .section {
-  margin: 3rem 0 12rem 0;  
+  margin-top: 104px;
 }
 
 @media (max-width: 960px) {
@@ -34,4 +34,11 @@
 }
 .home-nav {
   margin-top: 2rem;
+}
+
+.styled-card-deck {
+  margin-top: 32px;
+}
+.how-card {
+  max-width: 270px;
 }
