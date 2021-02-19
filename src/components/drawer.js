@@ -8,6 +8,7 @@ import List from '@material-ui/core/List';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
+import WorkWithUsDialog from './dialogs/workWithUsDialog';
 import './drawer.css';
 
 const getExternalListItem = ({ link, text }) => (
@@ -28,7 +29,6 @@ const getCommunityListItems = () =>
 const getAboutListItems = () => {
   const internalLinks = [
     { link: '/documentation', text: 'Documentation' },
-    { link: '/', text: 'Work with Us' },
     { link: '/', text: 'Contact Us' },
   ].map((aboutListItemInfo) => (
     <ListItem key={aboutListItemInfo.text}>
@@ -37,6 +37,7 @@ const getAboutListItems = () => {
       </Link>
     </ListItem>
   ));
+  internalLinks.push(<WorkWithUsDialog key="Work with Us" isMobile />);
   const externalLinks = [
     getExternalListItem({ link: 'github', text: 'GitHub' }),
   ];
@@ -64,6 +65,10 @@ const Drawer = () => {
     setIsDrawerToggled(open);
   };
 
+  const onClickDrawerItem = () => {
+    toggleDrawer(false);
+  };
+
   return (
     <>
       <Button className="mobile-nav" onClick={toggleDrawer(true)}>
@@ -77,8 +82,7 @@ const Drawer = () => {
         <div
           className={classes.list}
           role="presentation"
-          onClick={toggleDrawer(false)}
-          onKeyDown={toggleDrawer(false)}
+          onClick={onClickDrawerItem}
         >
           <List>
             <Link to="/funding" key="Funding-link">

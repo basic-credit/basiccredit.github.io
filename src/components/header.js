@@ -5,10 +5,12 @@ import { NavDropdown } from 'react-bootstrap';
 import { externalLinks } from '../common/externalLinks';
 import Drawer from './drawer';
 import useDocumentScrollThrottled from '../utils/useDocumentScrolledThrottle';
+import WorkWithUsDialog from './dialogs/workWithUsDialog';
 import './header.css';
 
 const Header = () => {
   const [headerBG, setHeaderBG] = useState(false);
+
   useDocumentScrollThrottled((callbackData) => {
     const { currentScrollTop } = callbackData;
 
@@ -49,7 +51,7 @@ const Header = () => {
               <NavDropdown.Item href={externalLinks.github}>
                 GitHub
               </NavDropdown.Item>
-              <NavDropdown.Item href="">Work with Us</NavDropdown.Item>
+              <WorkWithUsDialog isMobile={false} />
               <NavDropdown.Item href="">Contact Us</NavDropdown.Item>
             </NavDropdown>
           </Nav>
