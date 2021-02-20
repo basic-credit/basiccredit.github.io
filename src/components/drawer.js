@@ -8,7 +8,7 @@ import List from '@material-ui/core/List';
 import Button from '@material-ui/core/Button';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import WorkWithUsDialog from './dialogs/workWithUsDialog';
+import ContactUsDialog from './dialogs/contactUsDialog';
 import './drawer.css';
 
 const getExternalListItem = ({ link, text }) => (
@@ -29,7 +29,7 @@ const getCommunityListItems = () =>
 const getAboutListItems = () => {
   const internalLinks = [
     { link: '/documentation', text: 'Documentation' },
-    { link: '/', text: 'Contact Us' },
+    { link: '/', text: 'Work with Us' },
   ].map((aboutListItemInfo) => (
     <ListItem key={aboutListItemInfo.text}>
       <Link to={aboutListItemInfo.link}>
@@ -37,7 +37,7 @@ const getAboutListItems = () => {
       </Link>
     </ListItem>
   ));
-  internalLinks.push(<WorkWithUsDialog key="Work with Us" isMobile />);
+  internalLinks.push(<ContactUsDialog key="Contact Us" isMobile />);
   const externalLinks = [
     getExternalListItem({ link: 'github', text: 'GitHub' }),
   ];

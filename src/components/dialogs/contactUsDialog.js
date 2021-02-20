@@ -11,7 +11,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { NavDropdown } from 'react-bootstrap';
 
-const WorkWithUsDialog = ({ isMobile }) => {
+const ContactUsDialog = ({ isMobile }) => {
   const [state, setState] = useState({
     email: '',
     message: '',
@@ -40,10 +40,10 @@ const WorkWithUsDialog = ({ isMobile }) => {
 
   const item = isMobile ? (
     <ListItem style={{ color: '#007bff' }}>
-      <ListItemText primary="Work with Us" onClick={onClickOpen} />
+      <ListItemText primary="Contact Us" onClick={onClickOpen} />
     </ListItem>
   ) : (
-    <NavDropdown.Item onClick={onClickOpen}>Work with Us</NavDropdown.Item>
+    <NavDropdown.Item onClick={onClickOpen}>Contact Us</NavDropdown.Item>
   );
 
   return (
@@ -54,7 +54,7 @@ const WorkWithUsDialog = ({ isMobile }) => {
         onClose={onClickClose}
         aria-labelledby="form-dialog-title"
       >
-        <DialogTitle id="form-dialog-title">Work with Us</DialogTitle>
+        <DialogTitle id="form-dialog-title">Contact Us</DialogTitle>
         <DialogContent>
           <DialogContentText>
             Please provide your email address and we will reach out to you
@@ -71,7 +71,7 @@ const WorkWithUsDialog = ({ isMobile }) => {
           />
           <TextField
             margin="dense"
-            id="work-with-us-message-input"
+            id="contact-us-message-input"
             label="Message"
             type="text"
             multiline
@@ -93,8 +93,8 @@ const WorkWithUsDialog = ({ isMobile }) => {
   );
 };
 
-WorkWithUsDialog.propTypes = {
+ContactUsDialog.propTypes = {
   isMobile: PropTypes.bool,
 };
 
-export default WorkWithUsDialog;
+export default ContactUsDialog;
