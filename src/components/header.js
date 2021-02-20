@@ -5,7 +5,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { externalLinks } from '../common/externalLinks';
 import Drawer from './drawer';
 import useDocumentScrollThrottled from '../utils/useDocumentScrolledThrottle';
-import WorkWithUsDialog from './dialogs/workWithUsDialog';
+import ContactUsDialog from './dialogs/contactUsDialog';
 import './header.css';
 
 const Header = () => {
@@ -51,8 +51,8 @@ const Header = () => {
               <NavDropdown.Item href={externalLinks.github}>
                 GitHub
               </NavDropdown.Item>
-              <WorkWithUsDialog isMobile={false} />
-              <NavDropdown.Item href="">Contact Us</NavDropdown.Item>
+              <ContactUsDialog isMobile={false} />
+              <NavDropdown.Item href="">Work with Us</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav.Link
