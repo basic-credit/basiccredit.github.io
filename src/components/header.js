@@ -28,7 +28,13 @@ const Header = () => {
       >
         <Link to="/">
           <Navbar.Brand>
-            <img src={Logo} height="50" width="50" className="d-inline-block" />
+            <img
+              src={Logo}
+              height="50"
+              width="50"
+              alt="Basic Credit Logo"
+              className="d-inline-block"
+            />
             Basic Credit
           </Navbar.Brand>
         </Link>
