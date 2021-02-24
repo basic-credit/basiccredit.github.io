@@ -3,5 +3,5 @@ export const externalLinks = {
   discord: 'https://discord.com',
   twitter: 'https://twitter.com',
   github: 'https://github.com/basiccredit',
-  basicCreditApp: 'https://google.com',
+  basicCreditApp: 'http://app.basiccredit.org.s3-website.us-east-2.amazonaws.com/',
 };
