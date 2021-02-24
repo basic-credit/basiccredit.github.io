@@ -6,6 +6,7 @@ import { externalLinks } from '../common/externalLinks';
 import Drawer from './drawer';
 import useDocumentScrollThrottled from '../utils/useDocumentScrolledThrottle';
 import ContactUsDialog from './dialogs/contactUsDialog';
+import Logo from '../images/basic-credit-icon.png';
 import './header.css';
 
 const Header = () => {
@@ -26,7 +27,16 @@ const Header = () => {
         expand="lg"
       >
         <Link to="/">
-          <Navbar.Brand>Basic Credit</Navbar.Brand>
+          <Navbar.Brand>
+            <img
+              src={Logo}
+              height="50"
+              width="50"
+              alt="Basic Credit Logo"
+              className="d-inline-block"
+            />
+            Basic Credit
+          </Navbar.Brand>
         </Link>
         <Navbar className="desktop-nav">
           <Nav>
