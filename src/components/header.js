@@ -55,7 +55,7 @@ const Header = () => {
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="About">
-              <Link to="/documentation">
+              <Link to="/docs">
                 <NavDropdown.Item as="span">Documentation</NavDropdown.Item>
               </Link>
               <NavDropdown.Item href={externalLinks.github}>
